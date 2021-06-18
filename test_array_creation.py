@@ -10,7 +10,7 @@ class TestArrayCreation(unittest.TestCase):
 
     def test_from_tuple(self):
         metrix = np.array(((0, 0, 0), (0, 0, 0)))
-        self.assertEqual(metrix.shape, (x, x))
+        self.assertEqual(metrix.shape, (2, 3))
 
     def test_zeros_vector(self):
         vector = np.zeros(5)
@@ -34,7 +34,7 @@ class TestArrayCreation(unittest.TestCase):
 
     def test_arange_to(self):
         vector = np.arange(5)
-        assert_array_equal(vector, np.array([1, 2, 3, 4, 5]))
+        assert_array_equal(vector, np.array([0, 1, 2, 3, 4]))
 
     def test_arange_from_to(self):
         vector = np.arange(0, 5)
@@ -46,15 +46,15 @@ class TestArrayCreation(unittest.TestCase):
 
     def test_linspace(self):
         vector = np.linspace(0, 2, 5)
-        assert_array_equal(vector, np.array([x, x, x, x, x]))
+        assert_array_equal(vector, np.array([0., 0.5, 1., 1.5, 2.]))
 
     def test_eye(self):
         metrix = np.eye(3)
-        assert_array_equal(metrix, np.array([[x, x, x], [x, x, x], [x, x, x]]))
+        assert_array_equal(metrix, np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]))
 
     def test_identify(self):
         metrix = np.identity(3)
-        assert_array_equal(metrix, np.array([[x, x, x], [x, x, x], [x, x, x]]))
+        assert_array_equal(metrix, np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]))
 
 if __name__ == '__main__':
     unittest.main()
